@@ -1,16 +1,15 @@
-# dexy
 
-Frontend for Codex Api
+# Codex Frontend
 
-## Getting Started
+A frontend for codex made with Flutter.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Upload file
+- View file Uploaded
+- Download file
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Planned Features
+- Download with correct file name and extension
+- Settings for the connection
+- Persist the state (save recent upload list)

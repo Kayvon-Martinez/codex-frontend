@@ -13,3 +13,5 @@ A frontend for codex made with Flutter.
 - Download with correct file name and extension
 - Settings for the connection
 - Persist the state (save recent upload list)
+- Dockerize frontend
+- Add support for marketplace endpoints

@@ -18,3 +18,7 @@ A frontend for codex made with Flutter.
 - Add support for marketplace endpoints
 - Show status of locally running codex node
 - Show status of connection to codex peers
+
+
+## Screenshots
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)

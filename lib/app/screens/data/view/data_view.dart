@@ -176,39 +176,39 @@ class _DataScreenState extends State<DataScreen> {
                         children: [
                           Row(
                             children: [
+                              // SizedBox(
+                              //   width: MediaQuery.of(context).size.width > 600
+                              //       ? MediaQuery.of(context).size.width / 8
+                              //       : MediaQuery.of(context).size.width * 0.3,
+                              //   child: TextField(
+                              //     controller: fileNameController,
+                              //     maxLines: 1,
+                              //     onChanged: (value) {},
+                              //     decoration: const InputDecoration(
+                              //       border: OutlineInputBorder(
+                              //         borderSide: BorderSide.none,
+                              //         borderRadius: BorderRadius.only(
+                              //           topLeft: Radius.circular(10),
+                              //           bottomLeft: Radius.circular(10),
+                              //         ),
+                              //       ),
+                              //       hintText: "Enter File Name",
+                              //       filled: true,
+                              //       fillColor: Color(0xff363636),
+                              //       contentPadding: EdgeInsets.symmetric(
+                              //           vertical: 17.25, horizontal: 10),
+                              //     ),
+                              //   ),
+                              // ),
+                              // Container(
+                              //   width: 1,
+                              //   height: 50,
+                              //   color: Colors.white,
+                              // ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width > 600
-                                    ? MediaQuery.of(context).size.width / 8
-                                    : MediaQuery.of(context).size.width * 0.3,
-                                child: TextField(
-                                  controller: fileNameController,
-                                  maxLines: 1,
-                                  onChanged: (value) {},
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        bottomLeft: Radius.circular(10),
-                                      ),
-                                    ),
-                                    hintText: "Enter File Name",
-                                    filled: true,
-                                    fillColor: Color(0xff363636),
-                                    contentPadding: EdgeInsets.symmetric(
-                                        vertical: 17.25, horizontal: 10),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: 1,
-                                height: 50,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width > 600
-                                    ? MediaQuery.of(context).size.width / 8
-                                    : MediaQuery.of(context).size.width * 0.3,
+                                    ? MediaQuery.of(context).size.width / 3
+                                    : MediaQuery.of(context).size.width * 0.5,
                                 child: TextField(
                                   controller: cidController,
                                   maxLines: 1,
@@ -229,7 +229,7 @@ class _DataScreenState extends State<DataScreen> {
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width / 7
+                                ? MediaQuery.of(context).size.width / 5
                                 : MediaQuery.of(context).size.width * 0.3,
                             height: 50,
                             child: ElevatedButton(
@@ -239,8 +239,8 @@ class _DataScreenState extends State<DataScreen> {
                                   href:
                                       "$baseUrl/api/codex/v1/download/${cidController.text}",
                                 )
-                                      ..setAttribute(
-                                          "download", fileNameController.text)
+                                      ..setAttribute("download",
+                                          "") //, fileNameController.text)
                                       ..click();
                                 // anchorElement.download =
                                 //     fileNameController.text;

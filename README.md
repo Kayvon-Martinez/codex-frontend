@@ -22,4 +22,5 @@ A frontend for codex made with Flutter.
 
 ## Screenshots
 ![Data page: Upload](https://github.com/Kayvon-Martinez/codex-frontend/blob/master/screenshots/upload-page.png)
+![Data page: Upload (with uploads)](https://github.com/Kayvon-Martinez/codex-frontend/blob/master/screenshots/upload-page-uploads.png)
 ![Data page: Download](https://github.com/Kayvon-Martinez/codex-frontend/blob/master/screenshots/download-page.png)

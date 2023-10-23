@@ -1,22 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import constants from "../../../../util/Constants";
 import styled from "styled-components";
 import { useDexyStore } from "../../../../store";
 
 function DownloadTab() {
-  const { uploads, ftdCid, setFtdCid } = useDexyStore();
+  const { ftdCid, setFtdCid, nodeBaseUrl } = useDexyStore();
+
+  const [filename, setFilename] = useState("file");
 
   function download(cid: string) {
-    let filename = "file";
-    try {
-      var filenames = uploads.filter((item) => item.cid === cid);
-      filename = filenames[filenames.length - 1].fileName;
-    } catch (error) {
-      console.log(error);
-    }
     console.log(filename);
     console.log(cid);
-    fetch(`${constants.baseUrl}/api/codex/v1/download/${cid}`)
+    fetch(`${nodeBaseUrl}/api/codex/v1/download/${cid}`)
       .then((response) => response.blob())
       .then((blob) => {
         const url = window.URL.createObjectURL(new Blob([blob]));
@@ -40,11 +35,11 @@ function DownloadTab() {
         value={ftdCid}
       />
       <div id="divider"></div>
-      {/* <input
+      <input
         type="text"
         placeholder="Filename"
         onChange={(e) => setFilename(e.target.value)}
-      /> */}
+      />
       <button onClick={() => download(ftdCid)}>Download</button>
     </DownloadTabWrapper>
   );
@@ -53,22 +48,25 @@ function DownloadTab() {
 export default DownloadTab;
 
 const DownloadTabWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 70%;
+  width: 75%;
 
   input {
-    flex: 2;
-    height: 100%;
+    flex: 3;
+    height: 60px;
     padding: 10px 20px;
     border: none;
     background-color: ${constants.surfaceColor};
     color: ${constants.onSurfaceColor};
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none;
+    border: 2px solid ${constants.primaryColor};
   }
 
   input:nth-child(1) {
@@ -78,13 +76,13 @@ const DownloadTabWrapper = styled.div`
 
   #divider {
     width: 2.5px;
-    height: 100%;
+    height: 60px;
     background-color: #555555;
   }
 
   button {
-    flex: 1;
-    height: 100%;
+    flex: 2;
+    height: 60px;
     border: none;
     background-color: ${constants.primaryColor};
     color: ${constants.onPrimaryColor};
@@ -92,6 +90,7 @@ const DownloadTabWrapper = styled.div`
     cursor: pointer;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    width: 100%;
   }
 
   @media (max-width: 1180px) {

@@ -2,10 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationRail from "./components/layout/partials/NavigationRail";
 import styled from "styled-components";
 import DataPage from "./pages/data/DataPage";
+import DebugPage from "./pages/debug/DebugPage";
+import SettingsPage from "./pages/settings/SettingsPage";
 
 function PlacehoderPage(props: { name: string }) {
   return (
-    <div>
+    <PlacehoderPageWrapper>
       <p
         style={{
           color: "#fff",
@@ -13,7 +15,7 @@ function PlacehoderPage(props: { name: string }) {
       >
         {props.name}
       </p>
-    </div>
+    </PlacehoderPageWrapper>
   );
 }
 
@@ -24,23 +26,30 @@ export default function App() {
         <NavigationRail />
 
         <Routes>
-          <Route path="/" element={PlacehoderPage({ name: "About" })} />
+          <Route path="/" element={<SettingsPage />} />
           <Route
             path="/marketplace"
             element={PlacehoderPage({ name: "Marketplace" })}
           />
           <Route path="/data" element={<DataPage />} />
           <Route path="/node" element={PlacehoderPage({ name: "Node" })} />
-          <Route path="/debug" element={PlacehoderPage({ name: "Debug" })} />
+          <Route path="/debug" element={DebugPage()} />
         </Routes>
 
-        <div id="header-mobile">
+        <header id="header-mobile">
           <h1>Dexy</h1>
-        </div>
+        </header>
       </AppWrapper>
     </Router>
   );
 }
+
+const PlacehoderPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const AppWrapper = styled.div`
   display: flex;

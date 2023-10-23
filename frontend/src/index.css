@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,9 +13,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: #fefefe;
+  height: 100vh;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
 }
 
 #root > div > div {
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  #root > div > div {
+    height: calc(100vh - 155px);
+    overflow-y: scroll;
+  }
 }

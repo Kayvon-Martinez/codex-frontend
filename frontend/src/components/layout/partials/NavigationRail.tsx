@@ -2,7 +2,7 @@ import styled from "styled-components";
 import NavigationItem from "./NavigationItem";
 
 import {
-  MdOutlineHome,
+  MdOutlineSettings,
   MdStore,
   MdDataUsage,
   MdDeviceHub,
@@ -14,7 +14,7 @@ function NavigationRail() {
     <NavigationRailWrapper>
       <h1>Dexy</h1>
       <ul>
-        <NavigationItem name="Home" icon={MdOutlineHome} link="/" />
+        <NavigationItem name="Settings" icon={MdOutlineSettings} link="/" />
         <NavigationItem name="Marketplace" icon={MdStore} link="/marketplace" />
         <NavigationItem name="Data" icon={MdDataUsage} link="/data" />
         <NavigationItem name="Node" icon={MdDeviceHub} link="/node" />
@@ -35,6 +35,7 @@ const NavigationRailWrapper = styled.nav`
   width: 100px;
   background-color: #141414;
   padding: 16px;
+  z-index: 1;
 
   ul {
     display: flex;
@@ -71,14 +72,12 @@ const NavigationRailWrapper = styled.nav`
 
   @media (max-width: 768px) {
     flex-direction: row;
-    height: 100px;
+    height: 80px;
     width: 100%;
     padding: 0;
 
     ul {
       flex-direction: row;
-      height: 100%;
-      width: 100%;
     }
 
     h1 {

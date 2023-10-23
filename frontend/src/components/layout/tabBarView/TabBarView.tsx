@@ -65,4 +65,8 @@ const TabBarViewWrapper = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  @media (min-width: 768px) {
+    height: 100vh - 300px !important;
+  }
 `;

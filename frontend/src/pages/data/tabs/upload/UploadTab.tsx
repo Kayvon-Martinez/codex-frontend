@@ -6,12 +6,12 @@ import UploadedItemModel, {
 } from "../../../../data/models/UploadedItemModel";
 import UploadedItemComponent from "../../../../components/uploadedItem/UploadedItemComponent";
 import axios from "axios";
-import constants from "../../../../util/Constants";
 
 import { useDexyStore } from "../../../../store";
+import constants from "../../../../util/Constants";
 
 function UploadTab() {
-  const { uploads, setUploads } = useDexyStore();
+  const { uploads, setUploads, nodeBaseUrl } = useDexyStore();
   var filesCopy = useRef<UploadedItemModel[]>(uploads);
 
   useEffect(() => {
@@ -46,6 +46,7 @@ function UploadTab() {
             await axios
               .post(`${constants.testApiBaseUrl}/upload`, bytes, {
                 headers: {
+                  "Base-Url": nodeBaseUrl,
                   "Content-Type": "application/octet-stream",
                 },
               })
@@ -95,7 +96,7 @@ function UploadTab() {
         });
       }
     },
-    [setUploads, filesCopy]
+    [setUploads, filesCopy, nodeBaseUrl]
   );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });

@@ -1,5 +1,4 @@
 const constants = {
-  baseUrl: "http://localhost:8080",
   testApiBaseUrl: "http://localhost:5000",
   primaryColor: "#6f11db",
   onPrimaryColor: "#fefefe",
